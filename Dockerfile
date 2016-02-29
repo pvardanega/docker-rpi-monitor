@@ -13,7 +13,7 @@ RUN apt-get -y update
 RUN  apt-get install -y rpimonitor shellinabox
 RUN  sudo /usr/share/rpimonitor/scripts/updatePackagesStatus.pl
 ###
-RUN groupadd -r shellinabox && useradd -r -g shellinabox shellinabox
+
 COPY shellinabox_services /shellinabox_services
 RUN chmod 600 /shellinabox_services
 ###
