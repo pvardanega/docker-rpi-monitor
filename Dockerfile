@@ -13,5 +13,5 @@ RUN apt-get -y update
 RUN  apt-get install -y rpimonitor
 EXPOSE 8888
 EXPOSE 4200
-EXPOSE 8000
-ENTRYPOINT service rpimonitor restart && bash
+#EXPOSE 8000
+#ENTRYPOINT service rpimonitor restart && bash
