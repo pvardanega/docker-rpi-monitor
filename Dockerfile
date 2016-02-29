@@ -12,7 +12,7 @@ RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
 RUN  apt-get install -y rpimonitor shellinabox
 
-ADD setup_data.sh /setupdata.sh
+ADD setupdata.sh /setupdata.sh
 RUN chmod +x /setupdata.sh
 RUN sh /setupdata.sh
 EXPOSE 8888
