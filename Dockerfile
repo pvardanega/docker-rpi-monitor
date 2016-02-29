@@ -14,5 +14,7 @@ RUN  apt-get install -y rpimonitor
 EXPOSE 8888
 EXPOSE 4200
 #EXPOSE 8000
-CMD ["/etc/init.d/rpimonitor start"]
+ADD run.sh /run.sh
+RUN chmod +x /run.sh
+CMD ["/run.sh"]
 
