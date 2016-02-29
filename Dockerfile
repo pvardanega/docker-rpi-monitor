@@ -23,5 +23,4 @@ EXPOSE 4200
 
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
-CMD ["bash -C '/run.sh'","bash"]
-
+CMD bash -C '/run.sh';'bash'
