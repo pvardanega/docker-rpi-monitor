@@ -11,7 +11,7 @@ RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 #RUN echo " deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/" >> /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
 RUN  apt-get install -y rpimonitor shellinabox
-RUN echo "web.addons.1.name=Shellinabox" >> 
+
 ADD setup_data.sh /setupdata.sh
 RUN chmod +x /setupdata.sh
 RUN sh /setupdata.sh
