@@ -11,6 +11,7 @@ RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 #RUN echo " deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/" >> /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
 RUN  apt-get install -y rpimonitor shellinabox
+RUN  sudo /usr/share/rpimonitor/scripts/updatePackagesStatus.pl
 
 ADD setupdata.sh /setupdata.sh
 RUN chmod +x /setupdata.sh
