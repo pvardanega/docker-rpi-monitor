@@ -16,5 +16,5 @@ EXPOSE 4200
 #EXPOSE 8000
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
-ENTRYPOINT ["/run.sh"]
+CMD bash -C '/run.sh';'bash'
 
