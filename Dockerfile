@@ -11,4 +11,7 @@ RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 RUN echo " deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/" >> /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
 RUN  apt-get install -y rpimonitor
-RUN  service rpi-monitor start
+EXPOSE 8888
+EXPOSE 4200
+EXPOSE 8000
+ENTRYPOINT service rpimonitor restart && bash
