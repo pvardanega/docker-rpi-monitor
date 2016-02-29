@@ -10,7 +10,11 @@ RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2C0D3C0F
 RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 #RUN echo " deb https://github.com XavierBerger/RPi-Monitor-deb/raw/master/repo/" >> /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
-RUN  apt-get install -y rpimonitor
+RUN  apt-get install -y rpimonitor shellinabox
+RUN echo "web.addons.1.name=Shellinabox" >> 
+ADD setup_data.sh /setupdata.sh
+RUN chmod +x /setupdata.sh
+RUN sh /setupdata.sh
 EXPOSE 8888
 EXPOSE 4200
 #EXPOSE 8000
