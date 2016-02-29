@@ -12,7 +12,11 @@ RUN wget http://goo.gl/rsel0F -O /etc/apt/sources.list.d/rpimonitor.list
 RUN apt-get -y update
 RUN  apt-get install -y rpimonitor shellinabox
 RUN  sudo /usr/share/rpimonitor/scripts/updatePackagesStatus.pl
-
+###
+RUN groupadd -r shellinabox && useradd -r -g shellinabox shellinabox
+COPY shellinabox_services /shellinabox_services
+RUN chmod 600 /shellinabox_services
+###
 ADD setupdata.sh /setupdata.sh
 RUN chmod +x /setupdata.sh
 RUN sh /setupdata.sh
@@ -21,5 +25,12 @@ EXPOSE 4200
 #EXPOSE 8000
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
-CMD bash -C '/run.sh';'bash'
+##
+COPY docker-entrypoint.sh /
+COPY docker-command.sh /
+RUN chmod +x /docker-entrypoint.sh /docker-command.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/docker-command.sh"]
+###
+#CMD bash -C '/run.sh';'bash'
 
