@@ -14,5 +14,5 @@ RUN  apt-get install -y rpimonitor
 EXPOSE 8888
 EXPOSE 4200
 #EXPOSE 8000
-ENTRYPOINT ["/etc/init.d/rpimonitor"]
-CMD ["-D", "FOREGROUND"]
+#ENTRYPOINT ["/etc/init.d/rpimonitor"]
+CMD ["/etc/init.d/rpimonitor"]
