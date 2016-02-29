@@ -30,7 +30,7 @@ COPY docker-entrypoint.sh /
 COPY docker-command.sh /
 RUN chmod +x /docker-entrypoint.sh /docker-command.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["/docker-command.sh"]
+CMD ["/docker-command.sh","bash -C '/run.sh'","bash"]
 ###
 #CMD bash -C '/run.sh';'bash'
 
